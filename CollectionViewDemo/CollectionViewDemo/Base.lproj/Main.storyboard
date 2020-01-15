@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zk8-7N-gNd">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Icon Store-->
+        <scene sceneID="t6R-er-d97">
+            <objects>
+                <collectionViewController id="Xlp-0Y-iPG" customClass="IconCollectionViewController" customModule="CollectionViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="re9-rs-Og4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uJD-XV-yVD">
+                            <size key="itemSize" width="100" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gSI-ng-bZB" customClass="IconCollectionViewCell" customModule="CollectionViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vUx-F8-Sul">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-M0-sgN">
+                                            <rect key="frame" x="20" y="20" width="60" height="81.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAx-mY-sO7">
+                                            <rect key="frame" x="20" y="109.5" width="60" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NGz-M0-sgN" firstAttribute="top" secondItem="vUx-F8-Sul" secondAttribute="top" constant="20" symbolic="YES" id="5JX-ZN-I0N"/>
+                                        <constraint firstAttribute="bottom" secondItem="YAx-mY-sO7" secondAttribute="bottom" constant="20" symbolic="YES" id="8tk-bn-edJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="NGz-M0-sgN" secondAttribute="trailing" constant="20" symbolic="YES" id="NVH-9t-b7u"/>
+                                        <constraint firstItem="YAx-mY-sO7" firstAttribute="top" secondItem="NGz-M0-sgN" secondAttribute="bottom" constant="8" symbolic="YES" id="RbF-z6-yjz"/>
+                                        <constraint firstAttribute="trailing" secondItem="YAx-mY-sO7" secondAttribute="trailing" constant="20" symbolic="YES" id="Tty-nH-V5B"/>
+                                        <constraint firstItem="YAx-mY-sO7" firstAttribute="leading" secondItem="vUx-F8-Sul" secondAttribute="leading" constant="20" symbolic="YES" id="iNR-bP-Icc"/>
+                                        <constraint firstItem="NGz-M0-sgN" firstAttribute="leading" secondItem="vUx-F8-Sul" secondAttribute="leading" constant="20" symbolic="YES" id="m8w-a7-q9b"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="iconImageView" destination="NGz-M0-sgN" id="Ign-F2-yIt"/>
+                                    <outlet property="iconPriceLabel" destination="YAx-mY-sO7" id="Syy-p5-tKE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Xlp-0Y-iPG" id="AI9-SI-hl9"/>
+                            <outlet property="delegate" destination="Xlp-0Y-iPG" id="4D3-Jz-dEB"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Icon Store" id="RGV-CY-3YH"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hu-hJ-ZRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796.875" y="132.04225352112675"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fA7-Em-BjE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zk8-7N-gNd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qYd-Z6-hcH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xlp-0Y-iPG" kind="relationship" relationship="rootViewController" id="leZ-Fd-M1o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgm-0G-jEz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.625" y="132.04225352112675"/>
+        </scene>
+    </scenes>
+</document>
