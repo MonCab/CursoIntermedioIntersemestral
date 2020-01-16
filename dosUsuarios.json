@@ -1,5 +1,8 @@
 {
-"items": [
+"clave": 0674,
+"salon": "P010",
+"alumnos":
+[
 {
 "id": 1,
 "nombre": "Christina",
