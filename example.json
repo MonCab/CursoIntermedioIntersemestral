@@ -1,6 +1,6 @@
 {
-  "id": "1",
+  "id": 1,
   "nombre": "Hugo Cruz",
   "correo": "hugo.cardi@gmail.com",
-  "edad": "22"
+  "edad": 22
 }
