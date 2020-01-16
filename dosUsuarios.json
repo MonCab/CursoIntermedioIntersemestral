@@ -1,16 +1,16 @@
 {
-[
-  {
-  "id": "1",
-  "nombre": "Hugo Cruz",
-  "correo": "hugo.cardi@gmail.com",
-  "edad": "22"
-    },
-  {
-  "id": "2",
-  "nombre": "Pablo",
-  "correo": "elcorreo@gmail.com",
-  "edad": "21"
-    }
+"items": [
+{
+"id": 1,
+"nombre": "Christina",
+"correo": "jessica@simmons.ua",
+"edad": 19
+},
+{
+"id": 2,
+"nombre": "Lewis",
+"correo": "glenda@gray.hm",
+"edad": 17
+}
 ]
 }
