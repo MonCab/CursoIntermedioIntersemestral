@@ -1,0 +1,75 @@
+1. @IBOutlet var titleLabel: UILabel!
+2. Import MapKit
+3. @IBOutlet var mapView: MKMapView!
+4. case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailSeparatorCell.self), for: indexPath) as! RestaurantDetailSeparatorCell
+            cell.titleLabel.text = "HOW TO GET HERE"
+            cell.selectionStyle = .none
+            
+            return cell
+            
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
+            
+            cell.selectionStyle = .none
+            
+            return cell
+
+5. func configure(location: String) {
+        let geoCoder = CLGeocoder()
+        
+        print(location)
+        geoCoder.geocodeAddressString(location, completionHandler: { placemarks, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                let placemark = placemarks[0]
+                
+                let annotation = MKPointAnnotation()
+                
+                if let location = placemark.location {
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 250, longitudinalMeters:  250)
+                    self.mapView.setRegion(region, animated: false)
+                }
+            }
+        })
+    }
+
+6. cell.configure(location: restaurant.location)
+7. import MapKit
+8. @IBOutlet var mapView: MKMapView!
+9. var restaurant = Restaurant()
+10. let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                let placemark = placemarks[0]
+                
+                let annotation = MKPointAnnotation()
+                annotation.title = self.restaurant.name
+                annotation.subtitle = self.restaurant.type
+                
+                if let location = placemark.location {
+                    annotation.coordinate = location.coordinate
+                    
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    self.mapView.selectAnnotation(annotation, animated: true)
+                }
+            }
+        })
+11. override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.restaurant = restaurant
+        }
+    }
